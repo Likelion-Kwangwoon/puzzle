@@ -17,7 +17,7 @@ public class CommentController {
 
 
     //예시코드
-    @PostMapping("")
+    @PostMapping("comment")
     public Comment createComment(Comment comment) {
         return commentService.commentService(comment);
     }
