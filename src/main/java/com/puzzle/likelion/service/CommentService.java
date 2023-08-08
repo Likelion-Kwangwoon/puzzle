@@ -10,6 +10,8 @@ import com.puzzle.likelion.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CommentService {
 
@@ -36,6 +38,13 @@ public class CommentService {
                 .article(article)
                 .content(comment.getContent())
                 .build();
+
+        public Comment addComment(String comment) {
+            Comment comment = new Comment();
+        }
+
+        public List<Comment> getAllComments() {
+        }
 
         commentRepository.save(comment);
         return comment;
