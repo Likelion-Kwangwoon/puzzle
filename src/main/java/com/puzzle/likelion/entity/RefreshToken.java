@@ -2,8 +2,7 @@ package com.puzzle.likelion.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @NoArgsConstructor
 @Getter
