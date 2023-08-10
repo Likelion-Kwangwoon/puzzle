@@ -40,8 +40,8 @@ jobs:
         if: contains(github.ref, 'main')
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/Puzzle_BE .
-          docker push ${{ secrets.DOCKER_USERNAME }}/Puzzle_BE
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/puzzle .
+          docker push ${{ secrets.DOCKER_USERNAME }}/puzzle
 
       
   deploy:
@@ -59,6 +59,6 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           envs: GITHUB_SHA
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/Puzzle_BE
-            docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/Puzzle_BE
+            docker pull ${{ secrets.DOCKER_USERNAME }}/puzzle
+            docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/puzzle
             docker image prune -f
