@@ -1,6 +1,5 @@
 package com.puzzle.likelion.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.puzzle.likelion.entity.Review;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +23,8 @@ public class ReviewDTO {
 
     private Long views;
 
-    public Review toEntity(){
+    /*public Review toEntity(){
         return new Review(id, articleId, content, writer, rating, views);
-    }
+    }*/
 
 }

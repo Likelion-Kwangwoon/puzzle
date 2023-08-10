@@ -1,4 +1,4 @@
-package com.puzzle.likelion.DTO;
+package com.puzzle.likelion.dto;
 
 import com.puzzle.likelion.entity.Comment;
 import com.puzzle.likelion.entity.Member;
@@ -17,8 +17,9 @@ import java.time.format.DateTimeFormatter;
 public class CommentRequestDto {
     private Long id;
     private String comment;
-    private String createdDate = LocalDateTime.now()format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-    private String modifiedDate = LocalDateTime.now()format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
+    private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
+    private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
+    private Member member;
 
     public Comment toEntity() {
         Comment comments = Comment.builder()

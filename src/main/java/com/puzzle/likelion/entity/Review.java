@@ -1,7 +1,7 @@
 package com.puzzle.likelion.entity;
 
 import lombok.*;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name ="reviewTable")
@@ -15,9 +15,9 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private Long articleId;
-    
+    //@Column
+    //private Long articleId;
+
     @Column
     private String content;
 
@@ -37,7 +37,7 @@ public class Review {
 
     @ManyToOne
     private Article article;
-    @Builder
+    /*@Builder
     public Review(Long id, Long articleId, String content, String writer, Rating rating, Long views) {
         this.id = id;
         this.articleId = articleId;
@@ -45,7 +45,7 @@ public class Review {
         this.writer = writer;
         this.rating = rating;
         this.views = views;
-    }
+    }*/
 
     public void patch(Review reviewEntity){
         if(reviewEntity.content != null ){

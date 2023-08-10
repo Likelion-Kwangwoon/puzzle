@@ -1,7 +1,10 @@
-package com.puzzle.likelion.DTO;
+package com.puzzle.likelion.dto;
 
 import com.puzzle.likelion.entity.Comment;
 import lombok.Getter;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 public class CommentResponseDto {
