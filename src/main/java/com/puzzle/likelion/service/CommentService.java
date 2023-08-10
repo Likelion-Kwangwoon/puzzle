@@ -39,12 +39,12 @@ public class CommentService {
                 .content(comment.getContent())
                 .build();
 
-        public Comment addComment(String comment) {
-            Comment comment = new Comment();
+        /*public Comment addComment(String comment) {
+            //Comment comment = new Comment();
         }
 
         public List<Comment> getAllComments() {
-        }
+        }*/
 
         commentRepository.save(comment);
         return comment;
