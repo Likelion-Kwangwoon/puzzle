@@ -55,7 +55,7 @@ jobs:
         if: contains(github.ref, 'main')
         with:
           host: ${{ secrets.HOST_PROD }}
-          username: ubuntu
+          username: azureuser
           key: ${{ secrets.PRIVATE_KEY }}
           envs: GITHUB_SHA
           script: |
