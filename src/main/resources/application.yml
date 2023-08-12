@@ -12,17 +12,3 @@ spring:
   h2:
     console:
       enabled: true
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 1035217719453-vbkso2f5leih7s8h3f3pau601icagldc.apps.googleusercontent.com
-            client-secret: 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
-            redirect-uri: https://localhost:8080/login/oauth2/code/google
-            scope:
-              - email
-              - profile
-jwt:
-  issuer: ajufresh@gmail.com
-  secret_key: study-springboot
