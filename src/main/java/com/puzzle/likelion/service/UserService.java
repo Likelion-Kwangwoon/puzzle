@@ -19,12 +19,12 @@ public class UserService {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
         return userRepository.save(User.builder()
-                .email(dto.getEmail())
+                .email(dto.getEmail()) // 패스워드 암호화
                 .password(encoder.encode(dto.getPassword()))
                 .build()).getId();
     }
 
-    public User findById(Long userId) {
+    /*public User findById(Long userId) {
         return userRepository.findById(userId)
                 .orElseThrow(()->new IllegalArgumentException("Unexpected user"));
     }
@@ -32,5 +32,5 @@ public class UserService {
     public User findByEmail(String email) {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
-    }
+    }*/
 }
