@@ -1,10 +1,7 @@
 package com.puzzle.likelion.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -15,6 +12,8 @@ import jakarta.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Table(name = "comments")
 public class Comment {
     @Id
@@ -40,6 +39,9 @@ public class Comment {
 
     private String content;
 
+    public void update(String comment) {
+        this.comment = comment;
+    }
     //대댓글 정책은 어떻게 할건지?
 
 }
