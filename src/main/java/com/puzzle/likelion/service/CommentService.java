@@ -50,39 +50,16 @@ public class CommentService {
         public List<Comment> getAllComments() {
         }*/
 
-        /*@Transactional
-        public Long commentSave(String nickname, Long id, CommentRequestDto dto) {
-            User user = UserRepository.findByNickname(nickname);
-            Article article = articleRepository.findById(id).orElseThrow(() ->
-                    new IllegalArgumentException("댓글 쓰기 실패 : 해당 게시글이 존재하지 않습니다." + id));
-
-            dto.setUser(user);
-            dto.setArticle(article);
-
-            Comment comment = dto.toEntity();
-            commentRepository.save(comment);
-
-            return dto.getId();
-        }*/
-
-        /*@Transactional
-        public void update(Long postsId, Long id, CommentRequestDto.Request dto) {
-            Comment comment = commentRepository.findByPostsIdAndId(postsId, id).orElseThrow(() ->
-                    new IllegalAccessException("해당 댓글이 존재하지 않습니다." + id));
-
-            comment.update(dto.getComment());
-        }*/
-
-        /*@Transactional
-        public void delete(Long postsId, Long id) {
-            Comment comment = commentRepository.findByPostsIdAndId(postsId, id).orElseThrow(() ->
-                    new IllegalAccessException("해당 댓글이 존재하지 않습니다. id=" + id));
-
-            commentRepository.delete(comment);
-        }*/
 
 
         commentRepository.save(comment);
         return comment;
+    }
+
+    public void commentCreate(CommentRequestDto request) {
+        Comment comment = request.toEntity();
+        Article article = articleRepository.findById(request.getId()).get();
+
+        commentRepository.save(comment);
     }
 }
