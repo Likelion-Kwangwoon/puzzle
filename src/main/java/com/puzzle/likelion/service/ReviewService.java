@@ -25,19 +25,45 @@ public class ReviewService {
     @Autowired
     private MemberRepository memberRepository;
     @Autowired
-    private static ReviewRepository reviewRepository;
+    private ReviewRepository reviewRepository;
 
     @Transactional(readOnly = true)
-    public static List<Review> findAll() {
+    public List<Review> findAll() {
         return reviewRepository.findAll();
     }
     @Transactional(readOnly = true)
     public Review findById(Long id) {
         return reviewRepository.findById(id).orElse(null);
     }
-    //public Review create(ReviewDTO reviewDto) { }
+    public void create(ReviewDTO reviewDto) {
+        Review review = reviewDto.toEntity();
+        //Article targetArticle = articleRepository.findById(reviewDto.getId()).get();
+        //review.setArticle(targetArticle);
 
-    //public Review edit(Long id, ReviewDTO reviewDto) { }
+        reviewRepository.save(review);
+    }
 
-    //public Review delete(Long id) { }
+    public Review edit(Long id, ReviewDTO reviewDto){
+        Review reviewEntity = reviewDto.toEntity();
+        Review target = reviewRepository.findById(id).orElse(null);
+
+        if(target == null){
+            return null;    //리뷰 id를 찾을 수 없어서 수정 불가인 경우
+        }
+
+        target.patch(reviewEntity);
+        return reviewRepository.save(target);
+    }
+
+    public Review delete(Long id){
+        Review target = reviewRepository.findById(id).orElse(null);
+
+        if(target == null){
+            return null;
+        }
+
+        reviewRepository.delete(target);
+        return target;
+    }
+
 }
