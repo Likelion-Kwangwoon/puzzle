@@ -1,4 +1,4 @@
-package com.puzzle.likelion.config;
+/*package com.puzzle.likelion.config;
 
 import com.puzzle.likelion.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
@@ -59,4 +59,4 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-}
+}*/

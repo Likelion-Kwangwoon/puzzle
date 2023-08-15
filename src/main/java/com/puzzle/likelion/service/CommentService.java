@@ -62,4 +62,12 @@ public class CommentService {
 
         commentRepository.save(comment);
     }
+
+    public List<Comment> viewAllSameName(String comment) {
+        return commentRepository.findAllByComment(comment);
+    }
+
+    public List<Comment> viewAllSameId(String comment) {
+        return commentRepository.findAllByComment(comment);
+    }
 }
