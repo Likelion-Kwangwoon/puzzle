@@ -9,6 +9,7 @@ import jakarta.persistence.*;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Review {
     @Id
@@ -25,27 +26,18 @@ public class Review {
     private String writer;  //사용자 닉네임?
 
     @Column
-    private Rating rating;
+    private Long rating;    //Rating으로 바꾸기
 
     @Column
     private Long views;
 
     //시간되면 작성날짜시간 추가..
 
-    @ManyToOne
+    /*@ManyToOne
     private Member member;
 
     @ManyToOne
-    private Article article;
-    /*@Builder
-    public Review(Long id, Long articleId, String content, String writer, Rating rating, Long views) {
-        this.id = id;
-        this.articleId = articleId;
-        this.content = content;
-        this.writer = writer;
-        this.rating = rating;
-        this.views = views;
-    }*/
+    private Article article;*/
 
     public void patch(Review reviewEntity){
         if(reviewEntity.content != null ){
