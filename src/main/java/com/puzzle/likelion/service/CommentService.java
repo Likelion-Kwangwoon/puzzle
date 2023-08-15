@@ -1,13 +1,10 @@
 package com.puzzle.likelion.service;
 
 import com.puzzle.likelion.dto.CommentRequestDto;
-import com.puzzle.likelion.dto.CommentResponseDto;
 import com.puzzle.likelion.entity.Article;
 import com.puzzle.likelion.entity.Comment;
 import com.puzzle.likelion.entity.Member;
-import com.puzzle.likelion.entity.User;
 import com.puzzle.likelion.repository.*;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -69,5 +66,9 @@ public class CommentService {
 
     public List<Comment> viewAllSameId(String comment) {
         return commentRepository.findAllByComment(comment);
+    }
+
+    public Long deleteComment(Long id) {
+        return id;
     }
 }

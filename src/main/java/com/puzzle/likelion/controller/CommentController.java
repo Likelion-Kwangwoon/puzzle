@@ -41,4 +41,14 @@ public class CommentController {
         List<Comment> response = commentService.viewAllSameName(comment);
         return response;
     }
+
+    /*// UPDATE
+    @PutMapping("/update")
+    public ResponseEntity<String> updateComment()
+
+    // DELETE
+    @DeleteMapping("/delete")
+    public Long deleteComment(@PathVariable final Long postId, @PathVariable final Long id) {
+        return commentService.deleteComment(id);
+    }*/
 }
