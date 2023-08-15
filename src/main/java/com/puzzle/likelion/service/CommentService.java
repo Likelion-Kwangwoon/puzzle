@@ -17,16 +17,16 @@ public class CommentService {
     private ArticleRepository articleRepository;
     @Autowired
     private CommentRepository commentRepository;
-    @Autowired
+    /*@Autowired
     private LikeArticleRepository repository;
     @Autowired
     private MemberRepository memberRepository;
 
     public CommentService() {
-    }
+    }*/
 
 
-    public Comment commentService(Comment comment) {
+    /*public Comment commentService(Comment comment) {
 
         //유저 불러오는 부분 , 추후 삭제
         // memberRepository.findById(); 느낌으로 대체
@@ -40,18 +40,18 @@ public class CommentService {
                 .content(comment.getContent())
                 .build();
 
-        /*public Comment addComment(String comment) {
+        public Comment addComment(String comment) {
             //Comment comment = new Comment();
         }
 
         public List<Comment> getAllComments() {
-        }*/
+        }
 
 
 
         commentRepository.save(comment);
         return comment;
-    }
+    }*/
 
     public void commentCreate(CommentRequestDto request) {
         Comment comment = request.toEntity();
@@ -61,10 +61,12 @@ public class CommentService {
     }
 
     public List<Comment> viewAllSameName(String comment) {
+
         return commentRepository.findAllByComment(comment);
     }
 
     public List<Comment> viewAllSameId(String comment) {
+
         return commentRepository.findAllByComment(comment);
     }
 

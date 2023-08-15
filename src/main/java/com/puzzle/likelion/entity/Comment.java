@@ -27,19 +27,16 @@ public class Comment {
     @CreatedDate
     private String createdDate;
 
-    @Column(name = "modified_date")
-    @LastModifiedDate
-    private String modifiedDate;
-
-    @ManyToOne
-    private Member member;
+    //@ManyToOne
+    //private Member member;
 
     @ManyToOne
     private Article article;
 
-    private String content;
+    //private String content;
 
     public void update(String comment) {
+
         this.comment = comment;
     }
     //대댓글 정책은 어떻게 할건지?

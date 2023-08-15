@@ -42,13 +42,9 @@ public class CommentController {
         return response;
     }
 
-    /*// UPDATE
-    @PutMapping("/update")
-    public ResponseEntity<String> updateComment()
-
     // DELETE
     @DeleteMapping("/delete")
     public Long deleteComment(@PathVariable final Long postId, @PathVariable final Long id) {
         return commentService.deleteComment(id);
-    }*/
+    }
 }

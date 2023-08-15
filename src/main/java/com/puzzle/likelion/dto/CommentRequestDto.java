@@ -19,21 +19,16 @@ public class CommentRequestDto {
     private Long id;
     private String comment;
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-    private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-    private Member member;
-    private Article article;
+    //private Member member;
 
     public Comment toEntity() {
         Comment comments = Comment.builder()
                 .id(id)
                 .comment(comment)
                 .createdDate(createdDate)
-                .modifiedDate(modifiedDate)
-                .member(member)
-                .article(article)
+                //.member(member)
                 .build();
 
         return comments;
     }
-
 }
