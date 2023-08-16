@@ -18,8 +18,9 @@ public class LikeArticle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Member member;
+    //@ManyToOne
+    //private Member member;
+
     @ManyToOne
     private Article article;
 

@@ -21,8 +21,8 @@ public class ReviewController {
     private CommentRepository commentRepository;
     @Autowired
     private LikeArticleRepository repository;
-    @Autowired
-    private MemberRepository memberRepository;
+    //@Autowired
+    //private MemberRepository memberRepository;
     @Autowired
     private ReviewRepository reviewRepository;
     @Autowired

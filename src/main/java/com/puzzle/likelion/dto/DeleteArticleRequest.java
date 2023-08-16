@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class CreateAccessTokenResponse {
-    private String accessToken;
+public class DeleteArticleRequest {
+    private Long id;
+    private String password;
 }
