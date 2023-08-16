@@ -14,5 +14,4 @@ public class CreateArticleRequest {
     private String password;
     private String title;
     private String content;
-
 }
