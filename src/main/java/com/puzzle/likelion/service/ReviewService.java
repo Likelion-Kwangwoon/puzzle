@@ -23,8 +23,6 @@ public class ReviewService {
     @Autowired
     private LikeArticleRepository repository;
     @Autowired
-    private MemberRepository memberRepository;
-    @Autowired
     private ReviewRepository reviewRepository;
 
     @Transactional(readOnly = true)

@@ -32,8 +32,8 @@ public class Comment {
     @LastModifiedDate
     private String modifiedDate;
 
-    @ManyToOne
-    private Member member;
+    //@ManyToOne
+    //private Member member;
 
     @ManyToOne
     private Article article;

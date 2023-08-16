@@ -1,7 +1,6 @@
 package com.puzzle.likelion.dto;
 
 import com.puzzle.likelion.entity.Comment;
-import com.puzzle.likelion.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +18,7 @@ public class CommentRequestDto {
     private String comment;
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
     private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-    private Member member;
+    //private Member member;
 
     public Comment toEntity() {
         Comment comments = Comment.builder()
@@ -27,7 +26,7 @@ public class CommentRequestDto {
                 .comment(comment)
                 .createdDate(createdDate)
                 .modifiedDate(modifiedDate)
-                .member(member)
+                //.member(member)
                 .build();
 
         return comments;
